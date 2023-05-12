@@ -3,41 +3,27 @@
   <head>
     <title>Welcome to OGBlock</title>
     <style>
-      body {
-        background-color: #1b1a23;
-        color: #fff;
-        font-family: Arial, sans-serif;
+      #bitcoin-price {
+        font-weight: bold;
         text-align: center;
       }
-      #nostr-widget {
-        margin: 0 auto;
-        max-width: 500px;
+      #daily-quote {
+        font-weight: bold;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <h1>Welcome to OGBlock</h1>
-    <p>Thank you for visiting our GitHub landing page.</p>
-    <div id="nostr-widget">
-      <div id="nostr-embed-npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m"></div>
-      <script>
-        !(function () {
-          const n = document.createElement("script");
-          n.type = "text/javascript";
-          n.async = !0;
-          n.src =
-            "https://cdn.jsdelivr.net/gh/nostrband/nostr-embed@0.1.8/dist/nostr-embed.js";
-          n.onload = function () {
-            nostrEmbed.init(
-              "npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m",
-              "#nostr-embed-npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m",
-              ""
-            );
-          };
-          const a = document.getElementsByTagName("script")[0];
-          a.parentNode.insertBefore(n, a);
-        })();
-      </script>
+    <div id="bitcoin-price">
+      <!-- Replace with your Bitcoin price widget code -->
+      <p>Bitcoin Price Widget</p>
     </div>
+    <div id="daily-quote">
+      <!-- Replace with your daily quote widget code -->
+      <p>Daily Quote Widget</p>
+    </div>
+    <p>Insert compelling content and call-to-action here.</p>
+    <p>Additional information about OGBlock and its services.</p>
   </body>
 </html>

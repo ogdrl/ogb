@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Minimalistic Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      background-color: #2c003e;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      animation: pulse 2s ease-out infinite;
-    }
+	<title>Minimalistic Website</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+	<style>
+		body {
+			background-color: #2c003e;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			animation: pulse 2s ease-out infinite;
+		}
 
-    @keyframes pulse {
-      0% {
-        background-color: #2c003e;
-      }
-      50% {
-        background-color: #36005d;
-      }
-      100% {
-        background-color: #2c003e;
-      }
-    }
+		@keyframes pulse {
+			0% {
+				background-color: #2c003e;
+			}
+			50% {
+				background-color: #36005d;
+			}
+			100% {
+				background-color: #2c003e;
+			}
+		}
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 60px;
-      background-color: #1d002c;
-      position: relative;
-      z-index: 1;
-    }
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 60px;
+			background-color: #1d002c;
+			position: relative;
+			z-index: 1;
+		}
 
-    header img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-    }
+		header img {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			position: absolute;
+			top: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+			box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+		}
 
-    main {
-      padding: 20px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
+		section {
+			padding: 20px;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+		}
 
-    h1 {
-      font-size: 3rem;
-      margin-top:
+		h1 {
+			font-size: 3rem;
+			margin-top: 80px;
+			text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+		}
+
+		p {
+			font-size: 1.2rem;
+			margin-top: 40px;
+			line-height: 1.5;
+		}
+
+		a {
+			color: #fff;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<img src="https://raw.githubusercontent.com/ogdrl/ogb/main/Images/IMG_9401.png" alt="Logo">
+	</header>
+
+	<section>
+		<h1>Welcome</h1>
+		<p>Thank you for visiting our website
+

@@ -1,6 +1,7 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <style>
       body {
@@ -22,17 +23,28 @@
       }
 
       #logo {
-  display: block;
-  margin: 0 auto;
-  width: 30%;
-  border-radius: 50%;
-}
-
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        max-width: 200px;
+        border-radius: 50%;
+      }
 
       h1 {
         color: white;
         text-align: center;
-        margin-top: 50px;
+        margin-top: 20px;
+        font-size: 28px;
+      }
+
+      @media (max-width: 768px) {
+        #logo {
+          width: 70%;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
       }
     </style>
   </head>

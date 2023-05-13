@@ -8,6 +8,7 @@
         background-color: #3d003d;
         background-image: radial-gradient(#6c00ab, #3d003d);
         animation: pulse 2s ease-in-out infinite;
+        font-size: 18px;
       }
 
       @keyframes pulse {
@@ -22,12 +23,20 @@
         }
       }
 
+      header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
       #logo {
         display: block;
         margin: 0 auto;
-        width: 50%;
-        max-width: 100px;
-        border-radius: 50%;
+        width: 150px;
+        height: 150px;
       }
 
       h1 {
@@ -40,6 +49,7 @@
       @media (max-width: 768px) {
         #logo {
           width: 70%;
+          height: auto;
         }
 
         h1 {
@@ -49,7 +59,9 @@
     </style>
   </head>
   <body>
-    <h1>Welcome to</h1>
-    <img src="Images/IMG_9399.png" alt="Logo" id="logo" />
+    <header>
+      <img src="https://via.placeholder.com/150" alt="Logo" id="logo" />
+    </header>
+    <h1>Welcome to our website</h1>
   </body>
 </html>

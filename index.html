@@ -4,15 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to my website</title>
     <style>
+      /* Set default styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Set body styles */
       body {
         background-color: #3d003d;
         color: #fff;
         font-family: Arial, sans-serif;
         font-size: 16px;
-        margin: 0;
-        padding: 0;
+        line-height: 1.5;
       }
 
+      /* Set header styles */
       header {
         display: flex;
         justify-content: flex-start;
@@ -21,6 +29,7 @@
         padding: 20px;
       }
 
+      /* Set logo styles */
       #logo {
         display: block;
         width: 50px;
@@ -29,19 +38,43 @@
         margin-right: 20px;
       }
 
+      /* Set h1 styles */
       h1 {
         font-size: 24px;
         margin: 0;
       }
 
+      /* Set main styles */
+      main {
+        padding: 20px;
+      }
+
+      /* Set p styles */
+      p {
+        margin-bottom: 20px;
+      }
+
+      /* Set media queries for smaller screens */
       @media screen and (max-width: 768px) {
+        /* Set logo styles */
         #logo {
           width: 30px;
           height: 30px;
         }
 
+        /* Set h1 styles */
         h1 {
           font-size: 20px;
+        }
+
+        /* Set main styles */
+        main {
+          padding: 10px;
+        }
+
+        /* Set p styles */
+        p {
+          margin-bottom: 10px;
         }
       }
     </style>

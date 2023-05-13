@@ -1,99 +1,41 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to OGBlock</title>
-    <meta name="description" content="OGBlock is a leading provider of blockchain technology solutions and services.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <title>Welcome</title>
     <style>
       body {
-        background-color: #2d1450;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: 'Montserrat', sans-serif;
+        background-color: #3d003d;
+        background-image: radial-gradient(#6c00ab, #3d003d);
+        animation: pulse 2s ease-in-out infinite;
       }
+
+      @keyframes pulse {
+        0% {
+          background-color: #3d003d;
+        }
+        50% {
+          background-color: #1f001f;
+        }
+        100% {
+          background-color: #3d003d;
+        }
+      }
+
+      #logo {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+      }
+
       h1 {
         color: white;
-        font-size: 48px;
         text-align: center;
-        margin-bottom: 50px;
-      }
-      p {
-        color: white;
-        font-size: 24px;
-        text-align: center;
-        max-width: 500px;
-        margin-bottom: 20px;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 30px;
-      }
-      nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 30px;
-      }
-      nav a {
-        color: white;
-        font-size: 18px;
-        text-decoration: none;
-        margin-right: 30px;
-      }
-      .cta {
-        background-color: #fca311;
-        color: white;
-        font-size: 24px;
-        text-align: center;
-        padding: 20px 40px;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: all 0.3s ease-in-out;
-      }
-      .cta:hover {
-        background-color: #f96e0f;
-        transform: scale(1.05);
-      }
-      /* Media queries for smaller screens */
-      @media only screen and (max-width: 600px) {
-        h1 {
-          font-size: 36px;
-          margin-bottom: 30px;
-        }
-        p {
-          font-size: 18px;
-          margin-bottom: 15px;
-        }
-        nav {
-          margin-bottom: 15px;
-        }
-        nav a {
-          font-size: 14px;
-          margin-right: 15px;
-        }
-        .cta {
-          font-size: 18px;
-          padding: 15px 30px;
-        }
+        margin-top: 50px;
       }
     </style>
   </head>
   <body>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </nav>
-    <img src="https://www.example.com/images/logo.png" alt="OGBlock logo">
-    <h1>Welcome to OGBlock</h1>
-    <p>Insert compelling content and call-to-action here.</p>
-    <p>Additional information about OGBlock and its services.</p>
-    <a href="#" class="cta">Learn More</a>
+    <img src="https://raw.githubusercontent.com/ogdrl/ogb/main/Images/IMG_9399.png" alt="Logo" id="logo" />
+    <h1>Welcome</h1>
   </body>
 </html>

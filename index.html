@@ -2,33 +2,42 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to</title>
+    <title>Welcome to my website</title>
     <style>
       body {
         background-color: #3d003d;
-        background-image: radial-gradient(#6c00ab, #3d003d);
-        color: white;
+        color: #fff;
         font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #1c1c1c;
+        padding: 20px;
       }
 
       #logo {
         display: block;
-        margin: 0 auto;
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
+        margin-right: 20px;
       }
 
       h1 {
-        text-align: center;
-        margin-top: 30px;
         font-size: 24px;
+        margin: 0;
       }
 
-      @media (max-width: 768px) {
+      @media screen and (max-width: 768px) {
         #logo {
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
         }
 
         h1 {
@@ -38,7 +47,13 @@
     </style>
   </head>
   <body>
-    <img src="https://raw.githubusercontent.com/ogdrl/ogb/main/Images/IMG_9399.png" alt="Logo" id="logo" />
-    <h1>Welcome to</h1>
+    <header>
+      <img src="https://raw.githubusercontent.com/ogdrl/ogb/main/Images/IMG_9399.png" alt="Logo" id="logo">
+      <h1>Welcome to my website</h1>
+    </header>
+    
+    <main>
+      <p>This is the main content of my website.</p>
+    </main>
   </body>
 </html>

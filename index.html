@@ -4,16 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OGblock</title>
+  <title>My Website</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    body {
+      background-color: #240046;
+      color: #ffffff; /* Set text color to white for better visibility */
+    }
+
     .logo {
       width: 50px; /* Adjust the size as needed */
       height: 50px; /* Adjust the size as needed */
       border-radius: 50%; /* Creates a circular shape */
-      position: absolute;
-      top: 10px;
-      left: 10px;
+      margin: 10px;
     }
 
     nav {
@@ -54,9 +57,10 @@
 
     main {
       display: flex;
-      justify-content: top;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: calc(100vh - 70px);
     }
   </style>
 </head>
@@ -81,7 +85,7 @@
 
   <main>
     <section>
-      <h1>Welcome</h1>
+      <h1>Welcome to My Website</h1>
       <p>This is the main content of your website.</p>
     </section>
   </main>

@@ -38,42 +38,6 @@
       margin-left: 10px;
     }
 
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-button {
-      background-color: transparent;
-      border: none;
-      color: #ffffff;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
     main {
       display: flex;
       flex-direction: column;
@@ -82,45 +46,31 @@
       height: calc(100vh - 70px);
     }
 
-    .livecoinwatch-widget-6 {
-      text-align: center;
-      margin-top: 10px;
-    }
-
     section {
       text-align: center;
     }
   </style>
+  <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
 </head>
 
 <body>
   <header>
     <nav>
       <img src="Images/IMG_9401.png" alt="Logo" class="logo">
-      <ul>
-        <li class="dropdown">
-          <a href="#" class="dropdown-button">Menu</a>
-          <div class="dropdown-content">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-          </div>
-        </li>
-      </ul>
     </nav>
   </header>
 
   <main>
-    <div class="livecoinwatch-widget-6" lcw-coin="BTC" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#451c62" lcw-border-w="0"></div>
+    <div class="livecoinwatch-widget-6" lcw-coin="BTC" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#202334" lcw-border-w="0"></div>
     <section>
       <h1>Welcome to My Website</h1>
-      <p>This is the main content of your website.
-      </p>
-</section>
+    </section>
   </main>
+
   <footer>
     <p>&copy; 2023 My Website. All rights reserved.</p>
   </footer>
+
 </body>
+
 </html>

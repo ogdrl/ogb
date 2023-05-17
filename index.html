@@ -10,32 +10,16 @@
   <style>
     body {
       background-color: #240046;
-      color: #ffffff; /* Set text color to white for better visibility */
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
     }
 
     .logo {
-      width: 50px; /* Adjust the size as needed */
-      height: 50px; /* Adjust the size as needed */
-      border-radius: 50%; /* Creates a circular shape */
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       margin: 10px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    li {
-      margin-left: 10px;
     }
 
     main {
@@ -43,7 +27,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 70px);
+      padding: 20px;
+      height: 100vh;
     }
 
     section {
@@ -55,15 +40,14 @@
 
 <body>
   <header>
-    <nav>
-      <img src="Images/IMG_9401.png" alt="Logo" class="logo">
-    </nav>
+    <img src="Images/IMG_9401.png" alt="Logo" class="logo">
   </header>
 
   <main>
     <div class="livecoinwatch-widget-6" lcw-coin="BTC" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#202334" lcw-border-w="0"></div>
     <section>
       <h1>Welcome</h1>
+      <p>This is the main content of your website.</p>
     </section>
   </main>
 

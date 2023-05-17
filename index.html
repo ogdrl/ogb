@@ -34,16 +34,6 @@
     section {
       text-align: center;
       margin-bottom: 20px;
-      animation: fadeOut 0.5s ease-out;
-    }
-
-    @keyframes fadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
     }
 
     .widget-container {
@@ -63,14 +53,44 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .enter-button:active {
+      background-color: #3B2852;
     }
 
     footer {
       color: #ffffff;
       text-align: center;
     }
+
+    @keyframes nudge {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .nudge-screen {
+      animation: nudge 0.3s;
+    }
   </style>
   <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
+  <script>
+    function nudgeScreen() {
+      const mainElement = document.querySelector('main');
+      mainElement.classList.add('nudge-screen');
+      setTimeout(() => {
+        mainElement.classList.remove('nudge-screen');
+      }, 300);
+    }
+  </script>
 </head>
 
 <body>
@@ -85,24 +105,14 @@
         <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
         <div class="livecoinwatch-widget-6" lcw-coin="BTC" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1E0F1F" lcw-border-w="0"></div>
       </div>
-      <button class="enter-button" onclick="fadeOutSection()">Enter</button>
-    </section>
-  </main>
+      <button class="enter-button" onclick="nudgeScreen(); window.location.href='https://snort.social/p/npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m'">
+<i class="fas fa-sign-in-alt"></i> Enter
+</button>
+</section>
 
+  </main>
   <footer>
     <p>&copy; 2023 OGBlock. All rights reserved.</p>
   </footer>
-
-  <script>
-    function fadeOutSection() {
-      var section = document.querySelector('section');
-      section.style.animation = 'fadeOut 0.5s ease-out';
-      setTimeout(function () {
-        section.style.display = 'none';
-      }, 500);
-    }
-  </script>
-
 </body>
-
 </html>

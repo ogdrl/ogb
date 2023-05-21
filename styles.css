@@ -1,8 +1,16 @@
 body {
-  background-color: #1E0F1F;
-  color: #ffffff;
   margin: 0;
   padding: 0;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: #1E0F1F;
+  color: #ffffff;
 }
 
 .logo {
@@ -18,7 +26,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  height: 100vh;
+  min-height: calc(100vh - 80px);
 }
 
 section {
@@ -49,13 +57,5 @@ section {
 }
 
 footer {
-  color: #ffffff;
-  text-align: center;
-}
-
-@keyframes nudge {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(5px);
+  display: flex;
+  justify-content:

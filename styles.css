@@ -6,8 +6,8 @@ body {
 }
 
 .light-mode {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #F9F9F9;
+  color: #333333;
 }
 
 .dark-mode {
@@ -60,7 +60,7 @@ section {
 
 footer {
   display: flex;
-  justify-content: space-between;
+  justify
   align-items: center;
   color: #ffffff;
   text-align: center;
@@ -76,7 +76,7 @@ footer {
   border-radius: 50%;
   border: none;
   background-color: #ffffff;
-  color: #000000;
+  color: #333333;
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s;

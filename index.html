@@ -21,7 +21,7 @@
         <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
         <div class="livecoinwatch-widget-6" lcw-coin="BTC" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1E0F1F" lcw-border-w="0"></div>
       </div>
-      <button class="enter-button" onclick="nudgeScreen(); redirectTo('https://snort.social/p/npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m')">
+      <button class="enter-button" onclick="nudgeScreen(); window.location.href='https://snort.social/p/npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m'">
         <i class="fas fa-sign-in-alt"></i> Enter
       </button>
     </section>
@@ -29,12 +29,13 @@
 
   <footer>
     <p>&copy; 2023 OGBlock. All rights reserved.</p>
-    <button class="theme-toggle" onclick="toggleTheme();">
-      <i class="fas fa-adjust"></i>
+    <button class="theme-toggle" id="theme-toggle">
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
     </button>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

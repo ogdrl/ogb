@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   background-color: #1E0F1F;
   color: #ffffff;
@@ -18,7 +19,8 @@ main {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  height: 100vh;
+  min-height: calc(100vh - 110px); /* Subtracting header and footer heights */
+  box-sizing: border-box;
 }
 
 section {
@@ -104,5 +106,3 @@ footer {
 .light-mode footer {
   color: #000000;
 }
-
-/* Rest of the CSS styles... */

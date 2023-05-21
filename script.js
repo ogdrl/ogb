@@ -32,3 +32,7 @@ function nudgeScreen() {
     mainElement.classList.remove('nudge-screen');
   }, 300);
 }
+
+// Add event listener to the theme toggle button
+const themeToggle = document.querySelector('.theme-toggle');
+themeToggle.addEventListener('click', toggleTheme);

@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to OGBlock</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
-  <script src="script.js" defer></script>
 </head>
-
 <body>
   <header>
     <img src="Images/5DB76225-11FA-4D12-B683-405403D661E7.png" alt="Logo" class="logo">
@@ -23,7 +19,7 @@
         <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
         <div class="livecoinwatch-widget-6" lcw-coin="BTC" lcw-base="USD" lcw-period="d" lcw-color-tx="#ffffff" lcw-color-bg="#1E0F1F" lcw-border-w="0"></div>
       </div>
-      <button class="enter-button" onclick="nudgeScreen(); window.location.href='https://snort.social/p/npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m'">
+      <button class="enter-button" onclick="nudgeScreen(); redirectTo('https://snort.social/p/npub1sk5x080cwgqz5fcpmyleprvl5swc9352g2398hd4k6wr3qdd8ugqwqsr7m')">
         <i class="fas fa-sign-in-alt"></i> Enter
       </button>
     </section>
@@ -31,7 +27,9 @@
 
   <footer>
     <p>&copy; 2023 OGBlock. All rights reserved.</p>
+    <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-adjust"></i></button>
   </footer>
-</body>
 
+  <script src="script.js" defer></script>
+</body>
 </html>

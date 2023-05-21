@@ -1,26 +1,29 @@
 function toggleTheme() {
   const body = document.body;
-  const footer = document.querySelector('footer');
   const themeToggle = document.querySelector('.theme-toggle');
 
-  body.classList.toggle('dark-mode');
-  footer.classList.toggle('dark-mode');
-  themeToggle.classList.toggle('dark-mode');
-
-  // Check if the browser supports haptic feedback
-  if ('vibrate' in navigator) {
-    navigator.vibrate(50); // Provide haptic feedback for 50 milliseconds
+  if (body.classList.contains('dark-mode')) {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    themeToggle.classList.remove('animate');
+    // Add haptic feedback for light mode
+    if (navigator.vibrate) {
+      navigator.vibrate(50);
+    }
+  } else {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    themeToggle.classList.add('animate');
+    // Add haptic feedback for dark mode
+    if (navigator.vibrate) {
+      navigator.vibrate([50, 30, 50]);
+    }
   }
 }
 
-// Add animation to the dark mode button
-const themeToggle = document.querySelector('.theme-toggle');
-themeToggle.addEventListener('click', () => {
-  themeToggle.classList.add('animate');
-  setTimeout(() => {
-    themeToggle.classList.remove('animate');
-  }, 1000);
-});
+function redirectTo(url) {
+  window.location.href = url;
+}
 
 function nudgeScreen() {
   const mainElement = document.querySelector('main');
@@ -28,8 +31,4 @@ function nudgeScreen() {
   setTimeout(() => {
     mainElement.classList.remove('nudge-screen');
   }, 300);
-}
-
-function redirectTo(url) {
-  window.location.href = url;
 }

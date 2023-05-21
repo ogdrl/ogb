@@ -1,4 +1,6 @@
 body {
+  background-color: #1E0F1F;
+  color: #ffffff;
   margin: 0;
   padding: 0;
 }
@@ -26,7 +28,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  min-height: calc(100vh - 80px);
+  height: 100vh;
 }
 
 section {
@@ -58,4 +60,37 @@ section {
 
 footer {
   display: flex;
-  justify-content:
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle.animate {
+  animation: themeToggleAnimation 1s infinite;
+}
+
+@keyframes themeToggleAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

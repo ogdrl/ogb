@@ -1,30 +1,4 @@
-function toggleTheme() {
-  const body = document.body;
-  const themeToggle = document.querySelector('.theme-toggle');
-
-  if (body.classList.contains('dark-mode')) {
-    body.classList.remove('dark-mode');
-    body.classList.add('light-mode');
-    themeToggle.classList.remove('animate');
-    // Add haptic feedback for light mode
-    if (navigator.vibrate) {
-      navigator.vibrate(50);
-    }
-  } else {
-    body.classList.remove('light-mode');
-    body.classList.add('dark-mode');
-    themeToggle.classList.add('animate');
-    // Add haptic feedback for dark mode
-    if (navigator.vibrate) {
-      navigator.vibrate([50, 30, 50]);
-    }
-  }
-}
-
-function redirectTo(url) {
-  window.location.href = url;
-}
-
+// Function to nudge the screen
 function nudgeScreen() {
   const mainElement = document.querySelector('main');
   mainElement.classList.add('nudge-screen');
@@ -33,6 +7,23 @@ function nudgeScreen() {
   }, 300);
 }
 
-// Add event listener to the theme toggle button
-const themeToggle = document.querySelector('.theme-toggle');
-themeToggle.addEventListener('click', toggleTheme);
+// Function to redirect to a URL
+function redirectTo(url) {
+  window.location.href = url;
+}
+
+// Function to toggle between light and dark mode
+function toggleTheme() {
+  const bodyElement = document.body;
+  const footerElement = document.querySelector('footer');
+  const themeToggle = document.querySelector('.theme-toggle');
+  
+  bodyElement.classList.toggle('light-mode');
+  footerElement.classList.toggle('light-mode');
+  themeToggle.classList.toggle('animate');
+  
+  // Haptic feedback
+  if (navigator.vibrate) {
+    navigator.vibrate(20);
+  }
+}

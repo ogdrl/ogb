@@ -55,10 +55,13 @@ section {
 footer {
   color: #ffffff;
   text-align: center;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 20px;
+  position: fixed; /* Fixed position */
+  bottom: 0; /* Position at the bottom */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  padding: 10px; /* Added padding */
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  z-index: 999; /* Higher z-index to appear on top */
 }
 
 .theme-toggle {
@@ -105,4 +108,24 @@ footer {
 
 .light-mode footer {
   color: #000000;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1E0F1F;
+  color: #ffffff;
+}
+
+.dark-mode .widget-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #5B406B;
+}
+
+.dark-mode .enter-button {
+  background-color: #5B406B;
+  color: #ffffff;
+}
+
+.dark-mode footer {
+  color: #ffffff;
 }

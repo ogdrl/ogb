@@ -7,4 +7,5 @@ window.addEventListener('load', function() {
   document.body.appendChild(popup);
 
   setTimeout(function() {
-    popup.classList.remove('show
+    popup.classList.remove('show');
+

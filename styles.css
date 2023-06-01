@@ -1,1 +1,8 @@
+body {
+  background-color: lavender;
+  padding-top: 70px; /* Offset for the fixed navbar */
+}
 
+.navbar {
+  margin-bottom: 20px;
+}

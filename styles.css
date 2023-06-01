@@ -4,5 +4,17 @@ body {
 }
 
 .navbar {
-  margin-bottom: 20px;
+  background-color: lightblue;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+.navbar-nav .nav-link {
+  color: black;
+}
+
+.navbar-nav .nav-link:hover {
+  color: darkblue;
 }

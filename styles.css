@@ -11,6 +11,15 @@ body {
   color: white;
 }
 
+.navbar-toggler {
+  color: white;
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
 .navbar-nav .nav-link {
   color: white;
 }

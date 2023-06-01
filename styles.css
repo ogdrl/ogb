@@ -1,10 +1,10 @@
 body {
-  background-color: lavender;
+  background-color: #4B0082; /* Dark purple color */
   padding-top: 70px; /* Offset for the fixed navbar */
 }
 
 .navbar {
-  background-color: lightblue;
+  background-color: #6A5ACD; /* Purple color for the navbar */
 }
 
 .navbar-brand {
@@ -12,9 +12,9 @@ body {
 }
 
 .navbar-nav .nav-link {
-  color: black;
+  color: white;
 }
 
 .navbar-nav .nav-link:hover {
-  color: darkblue;
+  color: #D8BFD8; /* Light purple color when hovered */
 }

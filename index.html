@@ -12,10 +12,12 @@
             background-color: #50347B;
             color: #fff;
             padding: 10px;
+            display: flex;
+            align-items: center;
         }
 
         .menu {
-            float: left;
+            margin-right: 10px;
             font-size: 24px;
             cursor: pointer;
         }
@@ -25,9 +27,14 @@
         }
 
         @media only screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
             .menu {
-                float: none;
-                text-align: left;
+                margin-right: 0;
+                margin-bottom: 10px;
             }
         }
     </style>

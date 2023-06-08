@@ -16,8 +16,15 @@
             align-items: center;
         }
 
-        .menu {
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             margin-right: 10px;
+        }
+
+        .menu {
+            margin-left: auto;
             font-size: 24px;
             cursor: pointer;
         }
@@ -33,20 +40,21 @@
             }
 
             .menu {
-                margin-right: 0;
-                margin-bottom: 10px;
+                margin-left: 0;
+                margin-top: 10px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <span class="menu">&#8942;</span>
+        <img src="Images/IMG_9401.png" alt="Logo" class="logo">
         <h1>My Website</h1>
+        <span class="menu">&#8942;</span>
     </header>
     <main>
         <h2>Welcome to My Website</h2>
-        <p>This is a simple mobile-friendly website with a 3-dot menu on the left side and a custom color.</p>
+        <p>This is a simple mobile-friendly website with a circular logo on the left side and a 3-dot menu on the right side.</p>
     </main>
 
     <script>

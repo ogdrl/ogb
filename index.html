@@ -1,67 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Landing Page</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
 
-        header {
-            background-color: #50347B;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .menu {
-            margin-left: auto;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        @media only screen and (max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .menu {
-                margin-left: 0;
-                margin-top: 10px;
-            }
-        }
-    </style>
+    .welcome-container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="Images/IMG_9401.png" alt="Logo" class="logo">
-        <h1>My Website</h1>
-        <span class="menu">&#8942;</span>
-    </header>
-    <main>
-        <h2>Welcome to My Website</h2>
-        <p>This is a simple mobile-friendly website with a circular logo on the left side and a 3-dot menu on the right side.</p>
-    </main>
-
-    <script>
-        document.querySelector('.menu').addEventListener('click', function() {
-            // Implement your menu functionality here
-            alert('Menu clicked!');
-        });
-    </script>
+  <div class="welcome-container">
+    <h1>Welcome</h1>
+  </div>
 </body>
 </html>

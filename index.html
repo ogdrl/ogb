@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome Landing Page</title>
   <style>
     body {
@@ -21,9 +21,38 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
+
+    /* Navigation styles */
+    .navigation {
+      display: flex;
+      justify-content: center;
+      background-color: #8a5ba3; /* Match the welcome note background color */
+      padding: 10px 0;
+    }
+
+    .navigation li {
+      list-style: none;
+      margin: 0 15px;
+    }
+
+    .navigation li a {
+      text-decoration: none;
+      color: #ffffff; /* White text color for the navigation links */
+    }
+
+    .navigation li a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <ul class="navigation">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
   <div class="welcome-container">
     <h1>Welcome</h1>
   </div>

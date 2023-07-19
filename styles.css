@@ -1,64 +1,87 @@
-.menu-button::before {
-  content: '';
-  margin-top: -8px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #6b3e91; /* Dark purple color for the body background */
 }
 
-.menu-button::after {
-  content: '';
-  margin-top: 8px;
+.welcome-container {
+  text-align: center;
+  background-color: #8a5ba3; /* Slightly lighter purple color for the welcome note background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button::before {
-  margin-top: 0px;
-  transform: rotate(405deg);
+/* Top navigation styles */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8a5ba3; /* Match the welcome note background color */
+  padding: 10px 20px;
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button {
-  background: rgba(255, 255, 255, 0);
+.top-nav div {
+  color: #ffffff; /* White text color for the logo */
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button::after {
-  margin-top: 0px;
-  transform: rotate(-405deg);
+/* Menu styles */
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 700px) {
-  .menu-button-container {
-    display: flex;
-  }
+.menu li {
+  margin-right: 15px;
+  color: #ffffff; /* White text color for the menu items */
+}
+
+.menu-button-container {
+  display: none;
+}
+
+/* Add responsive styles for menu toggle */
+@media screen and (max-width: 768px) {
   .menu {
+    display: none;
+  }
+
+  .menu-button-container {
+    display: block;
+  }
+
+  .menu-button {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff; /* White color for the menu button */
+    position: relative;
+  }
+
+  .menu-button::before,
+  .menu-button::after {
+    content: "";
     position: absolute;
-    top: 0;
-    margin-top: 50px;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff; /* White color for the menu button */
   }
-  #menu-toggle ~ .menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  .menu-button::before {
+    top: -10px;
   }
-  #menu-toggle:checked ~ .menu li {
-    border: 1px solid #333;
-    height: 2.5em;
-    padding: 0.5em;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  .menu-button::after {
+    bottom: -10px;
   }
-  .menu > li {
+
+  #menu-toggle:checked ~ .menu {
     display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0.5em 0;
-    width: 100%;
-    color: white;
-    background-color: #222;
-  }
-  .menu > li:not(:last-child) {
-    border-bottom: 1px solid #444;
+    flex-direction: column;
   }
 }

@@ -4,15 +4,15 @@
     <title>Simple Website</title>
     <style>
         :root {
-            --bs-dark: #333333; /* Deeper/darker color for dark mode */
-            --bs-light: #fff; /* White color for light mode */
+            --bs-dark: #212121; /* Darker color for dark mode */
+            --bs-light: #f2f2f2; /* Lighter color for light mode */
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: var(--bs-light); /* Light mode background color (white) */
+            background-color: var(--bs-dark); /* Dark mode background color */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -20,12 +20,12 @@
         }
 
         header {
-            background-color: var(--bs-light); /* Menu background color (white) for light mode */
-            color: var(--bs-dark); /* Text color (dark) for light mode */
+            background-color: var(--bs-dark); /* Menu background color for dark mode */
+            color: var(--bs-light); /* Text color for dark mode */
             padding: 20px;
             display: flex;
-            justify-content: space-between; /* Arrange content in a row with space between */
-            align-items: center; /* Align items vertically */
+            justify-content: space-between;
+            align-items: center;
         }
 
         .hamburger {
@@ -38,13 +38,14 @@
             display: block;
             width: 25px;
             height: 3px;
-            background-color: var(--bs-dark); /* Menu icon color (dark) for light mode */
+            background-color: var(--bs-light); /* Menu icon color for dark mode */
             margin-bottom: 5px;
         }
 
         .welcome {
             text-align: center;
             margin-top: 150px;
+            color: var(--bs-light); /* Text color for dark mode */
         }
 
         /* Additional styles for the theme container */
@@ -76,7 +77,7 @@
         /* Styles for the footer */
         footer {
             background-color: var(--bs-dark); /* Dark background color for the footer */
-            color: var(--bs-light); /* Text color (light) for the footer */
+            color: var(--bs-light); /* Text color for dark mode */
             padding: 20px;
             text-align: center;
             margin-top: auto; /* Push the footer to the bottom of the page */
@@ -120,7 +121,7 @@
                 theme = "light";
             } else {
                 document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.documentElement.style.setProperty("--bs-dark", "#808080");
+                document.documentElement.style.setProperty("--bs-dark", "#212121"); /* Darken the color */
                 document.body.style.backgroundColor = "var(--bs-dark)";
                 themeContainer.style.backgroundColor = "var(--bs-dark)";
                 themeIcon.src = moon;
@@ -132,7 +133,7 @@
         // Apply the stored theme on page load
         if (theme === "dark") {
             document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-            document.documentElement.style.setProperty("--bs-dark", "#808080");
+            document.documentElement.style.setProperty("--bs-dark", "#212121"); /* Darken the color */
             document.body.style.backgroundColor = "var(--bs-dark)";
             themeContainer.style.backgroundColor = "var(--bs-dark)";
             themeIcon.src = moon;

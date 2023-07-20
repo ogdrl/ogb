@@ -1,85 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Website</title>
+    <title>OGBlock</title> <!-- Set the title as "OGBlock" -->
+
     <style>
-        :root {
-            --bs-dark: #212121; /* Darker color for dark mode */
-            --bs-light: #f2f2f2; /* Lighter color for light mode */
-        }
+        /* Your CSS styles as before */
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--bs-dark); /* Dark mode background color */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            transition: 0.5s;
-            color: var(--bs-light); /* Text color for both dark and light modes */
-        }
-
-        header {
-            background-color: var(--bs-dark); /* Menu background color for dark mode */
+        /* Additional styles for the code block container */
+        .code-block-container {
+            margin-top: 50px;
             padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .hamburger {
-            display: inline-block;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--bs-light); /* Menu icon color for both dark and light modes */
-            margin-bottom: 5px;
-        }
-
-        .welcome {
-            text-align: center;
-            margin-top: 150px;
-        }
-
-        /* Additional styles for the theme container */
-        .theme-container {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            position: fixed;
-            top: 20px; /* Position the theme container at the top */
-            right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.5s;
-            background-color: var(--bs-dark); /* Use the --bs-dark variable as the background color */
-        }
-
-        #theme-icon {
-            width: 30px; /* Set the width and height as per your image */
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        /* Hover effect for the theme container */
-        .theme-container:hover {
-            transform: scale(1.1); /* Increase the size on hover */
-        }
-
-        /* Styles for the footer */
-        footer {
-            background-color: var(--bs-dark); /* Dark background color for the footer */
-            padding: 20px;
-            text-align: center;
-            color: var(--bs-light); /* Text color for both dark and light modes */
-            margin-top: auto; /* Push the footer to the bottom of the page */
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            white-space: pre-wrap;
+            font-family: monospace;
         }
     </style>
 </head>
@@ -106,6 +41,8 @@
     </footer>
 
     <script>
+        // Your JavaScript code as before
+
         // Function to toggle the theme
         function toggleTheme() {
             var theme = localStorage.getItem("theme") || "dark";
@@ -122,7 +59,7 @@
                 themeIcon.src = sun;
                 theme = "light";
             } else {
-                document.documentElement.style.setProperty("--bs-light", "#fff");
+                document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
                 document.documentElement.style.setProperty("--bs-dark", "#212121"); /* Darken the color */
                 document.body.style.backgroundColor = "var(--bs-dark)";
                 themeContainer.style.backgroundColor = "var(--bs-dark)";

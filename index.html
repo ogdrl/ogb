@@ -13,6 +13,9 @@
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: var(--bs-light); /* Light mode background color (white) */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             transition: 0.5s;
         }
 
@@ -74,6 +77,7 @@
             color: var(--bs-light); /* Text color (light) for the footer */
             padding: 20px;
             text-align: center;
+            margin-top: auto; /* Push the footer to the bottom of the page */
         }
     </style>
 </head>
@@ -99,46 +103,44 @@
     </footer>
 
     <script>
-        // Get the theme preference from localStorage, or use "dark" as the default
         var theme = localStorage.getItem("theme") || "dark";
-        const container = document.getElementsByClassName("theme-container")[0];
+        const container = document.querySelector(".theme-container");
         const themeIcon = document.getElementById("theme-icon");
         const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
         const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
 
-        // Apply the stored theme on page load
-        if (theme === "dark") {
-            document.documentElement.style.setProperty("--bs-light", "#f2f2f2"); /* Reset light mode background color to ash grey */
-            document.documentElement.style.setProperty("--bs-dark", "#808080"); /* Reset text color for light mode */
-            document.body.style.backgroundColor = "var(--bs-dark)";
-            container.style.backgroundColor = "var(--bs-dark)";
-            themeIcon.src = moon;
-        } else {
-            document.documentElement.style.setProperty("--bs-light", "#fff"); /* Update light mode background color */
-            document.documentElement.style.setProperty("--bs-dark", "#333333"); /* Update text color for light mode */
-            document.body.style.backgroundColor = "var(--bs-light)";
-            container.style.backgroundColor = "var(--bs-light)";
-            themeIcon.src = sun;
-        }
-
         function toggleTheme() {
             if (theme === "dark") {
-                document.documentElement.style.setProperty("--bs-light", "#fff"); /* Update light mode background color */
-                document.documentElement.style.setProperty("--bs-dark", "#333333"); /* Update text color for light mode */
+                document.documentElement.style.setProperty("--bs-light", "#fff");
+                document.documentElement.style.setProperty("--bs-dark", "#333333");
                 document.body.style.backgroundColor = "var(--bs-light)";
                 container.style.backgroundColor = "var(--bs-light)";
                 themeIcon.src = sun;
                 theme = "light";
             } else {
-                document.documentElement.style.setProperty("--bs-light", "#f2f2f2"); /* Reset light mode background color to ash grey */
-                document.documentElement.style.setProperty("--bs-dark", "#808080"); /* Reset text color for light mode */
+                document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+                document.documentElement.style.setProperty("--bs-dark", "#808080");
                 document.body.style.backgroundColor = "var(--bs-dark)";
                 container.style.backgroundColor = "var(--bs-dark)";
                 themeIcon.src = moon;
                 theme = "dark";
             }
-            // Save the updated theme preference to localStorage
             localStorage.setItem("theme", theme);
+        }
+
+        // Apply the stored theme on page load
+        if (theme === "dark") {
+            document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+            document.documentElement.style.setProperty("--bs-dark", "#808080");
+            document.body.style.backgroundColor = "var(--bs-dark)";
+            container.style.backgroundColor = "var(--bs-dark)";
+            themeIcon.src = moon;
+        } else {
+            document.documentElement.style.setProperty("--bs-light", "#fff");
+            document.documentElement.style.setProperty("--bs-dark", "#333333");
+            document.body.style.backgroundColor = "var(--bs-light)";
+            container.style.backgroundColor = "var(--bs-light)";
+            themeIcon.src = sun;
         }
     </script>
 </body>

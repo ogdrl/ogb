@@ -81,12 +81,6 @@
             text-align: center;
             margin-top: auto; /* Push the footer to the bottom of the page */
         }
-
-        /* Additional styles for the Spotify playlist container */
-        .spotify-container {
-            border-radius: 12px;
-            overflow: hidden;
-        }
     </style>
 </head>
 <body>
@@ -96,19 +90,14 @@
             <span></span>
             <span></span>
         </div>
+        <!-- Added theme container with the image on the opposite side -->
+        <div class="theme-container shadow-dark" onclick="toggleTheme()">
+            <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+        </div>
     </header>
     <section class="welcome">
-        <h1>Welcome</h1>
-        <!-- Spotify playlist embedded inside a container -->
-        <div class="spotify-container">
-            <iframe src="https://open.spotify.com/embed/playlist/3gdT2Xtw23uAijOCwg7IvK?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+        <h1>"I rebel; therefore I exist."</h1>
     </section>
-
-    <!-- Added theme container with the image -->
-    <div class="theme-container shadow-dark" onclick="toggleTheme()">
-        <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
-    </div>
 
     <footer>
         OGBlock 2023

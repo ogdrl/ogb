@@ -3,102 +3,32 @@
 <head>
     <title>Simple Website</title>
     <style>
-        :root {
-            --bs-dark: #212121; /* Darker color for dark mode */
-            --bs-light: #f2f2f2; /* Lighter color for light mode */
-        }
+        /* CSS styles as before */
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--bs-dark); /* Dark mode background color */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            transition: 0.5s;
-        }
-
-        header {
-            background-color: var(--bs-dark); /* Menu background color for dark mode */
-            color: var(--bs-light); /* Text color for dark mode */
+        /* Additional styles for the code block container */
+        .code-block-container {
+            margin-top: 50px;
             padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .hamburger {
-            display: inline-block;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--bs-light); /* Menu icon color for dark mode */
-            margin-bottom: 5px;
-        }
-
-        .welcome {
-            text-align: center;
-            margin-top: 150px;
-            color: var(--bs-light); /* Text color for dark mode */
-        }
-
-        /* Additional styles for the theme container */
-        .theme-container {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.5s;
-            background-color: var(--bs-dark); /* Use the --bs-dark variable as the background color */
-        }
-
-        #theme-icon {
-            width: 30px; /* Set the width and height as per your image */
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        /* Hover effect for the theme container */
-        .theme-container:hover {
-            transform: scale(1.1); /* Increase the size on hover */
-        }
-
-        /* Styles for the footer */
-        footer {
-            background-color: var(--bs-dark); /* Dark background color for the footer */
-            color: var(--bs-light); /* Text color for dark mode */
-            padding: 20px;
-            text-align: center;
-            margin-top: auto; /* Push the footer to the bottom of the page */
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            white-space: pre-wrap;
+            font-family: monospace;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <!-- Added theme container with the image on the opposite side -->
-        <div class="theme-container shadow-dark" onclick="toggleTheme()">
-            <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
-        </div>
+        <!-- Header content as before -->
     </header>
     <section class="welcome">
         <h1>"I rebel; therefore I exist."</h1>
     </section>
+
+    <!-- Added theme container with the image -->
+    <div class="theme-container shadow-dark" onclick="toggleTheme()">
+        <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+    </div>
 
     <footer>
         OGBlock 2023
@@ -121,7 +51,7 @@
                 theme = "light";
             } else {
                 document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.documentElement.style.setProperty("--bs-dark", "#212121"); /* Darken the color */
+                document.documentElement.style.setProperty("--bs-dark", "#808080");
                 document.body.style.backgroundColor = "var(--bs-dark)";
                 themeContainer.style.backgroundColor = "var(--bs-dark)";
                 themeIcon.src = moon;
@@ -130,19 +60,19 @@
             localStorage.setItem("theme", theme);
         }
 
-        // Apply the stored theme on page load
-        if (theme === "dark") {
-            document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-            document.documentElement.style.setProperty("--bs-dark", "#212121"); /* Darken the color */
-            document.body.style.backgroundColor = "var(--bs-dark)";
-            themeContainer.style.backgroundColor = "var(--bs-dark)";
-            themeIcon.src = moon;
-        } else {
+        // Apply the stored theme on page load or set default to dark mode
+        if (theme === "light") {
             document.documentElement.style.setProperty("--bs-light", "#fff");
             document.documentElement.style.setProperty("--bs-dark", "#333333");
             document.body.style.backgroundColor = "var(--bs-light)";
             themeContainer.style.backgroundColor = "var(--bs-light)";
             themeIcon.src = sun;
+        } else {
+            document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+            document.documentElement.style.setProperty("--bs-dark", "#808080");
+            document.body.style.backgroundColor = "var(--bs-dark)";
+            themeContainer.style.backgroundColor = "var(--bs-dark)";
+            themeIcon.src = moon;
         }
     </script>
 </body>

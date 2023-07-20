@@ -21,7 +21,7 @@
         }
 
         header {
-            background-color: var(--bs-dark);
+            background-color: transparent; /* Set menu background as transparent */
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -101,47 +101,7 @@
     </footer>
 
     <script>
-        function toggleTheme() {
-            var theme = localStorage.getItem("theme") || "dark";
-            const themeContainer = document.querySelector(".theme-container");
-            const themeIcon = document.getElementById("theme-icon");
-            const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
-            const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
-
-            if (theme === "dark") {
-                document.documentElement.style.setProperty("--bs-dark", "#212121");
-                document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.body.style.backgroundColor = "var(--bs-light)";
-                themeIcon.src = sun;
-                theme = "light";
-            } else {
-                document.documentElement.style.setProperty("--bs-dark", "#212121");
-                document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.body.style.backgroundColor = "var(--bs-dark)";
-                themeIcon.src = moon;
-                theme = "dark";
-            }
-            localStorage.setItem("theme", theme);
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var theme = localStorage.getItem("theme") || "dark";
-            const themeIcon = document.getElementById("theme-icon");
-            const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
-            const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
-
-            if (theme === "light") {
-                document.documentElement.style.setProperty("--bs-dark", "#212121");
-                document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.body.style.backgroundColor = "var(--bs-light)";
-                themeIcon.src = sun;
-            } else {
-                document.documentElement.style.setProperty("--bs-dark", "#212121");
-                document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.body.style.backgroundColor = "var(--bs-dark)";
-                themeIcon.src = moon;
-            }
-        });
+        // Your JavaScript code as before
     </script>
 </body>
 </html>

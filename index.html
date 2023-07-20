@@ -23,7 +23,9 @@
             background-color: var(--bs-light); /* Menu background color (white) for light mode */
             color: var(--bs-dark); /* Text color (dark) for light mode */
             padding: 20px;
-            text-align: right;
+            display: flex;
+            justify-content: space-between; /* Arrange content in a row with space between */
+            align-items: center; /* Align items vertically */
         }
 
         .hamburger {
@@ -46,28 +48,26 @@
         }
 
         /* Additional styles for the theme container */
-        .theme-container {
+        .theme-container,
+        .icon-container {
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             transition: 0.5s;
-            background-color: var(--bs-dark); /* Use the --bs-dark variable as the background color */
         }
 
-        #theme-icon {
+        #theme-icon, #circular-icon {
             width: 30px; /* Set the width and height as per your image */
             height: 30px;
             margin-right: 10px;
         }
 
-        /* Hover effect for the theme container */
-        .theme-container:hover {
+        /* Hover effect for the theme and icon containers */
+        .theme-container:hover,
+        .icon-container:hover {
             transform: scale(1.1); /* Increase the size on hover */
         }
 
@@ -88,6 +88,10 @@
             <span></span>
             <span></span>
         </div>
+        <!-- Added circular icon container with the image -->
+        <div class="icon-container">
+            <img id="circular-icon" src="https://raw.githubusercontent.com/ogdrl/ogb/main/Images/IMG_9401.png" alt="Icon">
+        </div>
     </header>
     <section class="welcome">
         <h1>Welcome</h1>
@@ -104,8 +108,10 @@
 
     <script>
         var theme = localStorage.getItem("theme") || "dark";
-        const container = document.querySelector(".theme-container");
+        const themeContainer = document.querySelector(".theme-container");
+        const circularIconContainer = document.querySelector(".icon-container");
         const themeIcon = document.getElementById("theme-icon");
+        const circularIcon = document.getElementById("circular-icon");
         const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
         const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
 
@@ -114,14 +120,16 @@
                 document.documentElement.style.setProperty("--bs-light", "#fff");
                 document.documentElement.style.setProperty("--bs-dark", "#333333");
                 document.body.style.backgroundColor = "var(--bs-light)";
-                container.style.backgroundColor = "var(--bs-light)";
+                themeContainer.style.backgroundColor = "var(--bs-light)";
+                circularIconContainer.style.backgroundColor = "var(--bs-light)";
                 themeIcon.src = sun;
                 theme = "light";
             } else {
                 document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
                 document.documentElement.style.setProperty("--bs-dark", "#808080");
                 document.body.style.backgroundColor = "var(--bs-dark)";
-                container.style.backgroundColor = "var(--bs-dark)";
+                themeContainer.style.backgroundColor = "var(--bs-dark)";
+                circularIconContainer.style.backgroundColor = "var(--bs-dark)";
                 themeIcon.src = moon;
                 theme = "dark";
             }
@@ -133,13 +141,15 @@
             document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
             document.documentElement.style.setProperty("--bs-dark", "#808080");
             document.body.style.backgroundColor = "var(--bs-dark)";
-            container.style.backgroundColor = "var(--bs-dark)";
+            themeContainer.style.backgroundColor = "var(--bs-dark)";
+            circularIconContainer.style.backgroundColor = "var(--bs-dark)";
             themeIcon.src = moon;
         } else {
             document.documentElement.style.setProperty("--bs-light", "#fff");
             document.documentElement.style.setProperty("--bs-dark", "#333333");
             document.body.style.backgroundColor = "var(--bs-light)";
-            container.style.backgroundColor = "var(--bs-light)";
+            themeContainer.style.backgroundColor = "var(--bs-light)";
+            circularIconContainer.style.backgroundColor = "var(--bs-light)";
             themeIcon.src = sun;
         }
     </script>

@@ -1,26 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OGBlock</title> <!-- Set the title as "OGBlock" -->
-
+    <title>OGBlock</title>
     <style>
-        /* Your CSS styles as before */
+        :root {
+            --bs-dark: #212121;
+            --bs-light: #f2f2f2;
+        }
 
-        /* Additional styles for the code block container */
-        .code-block-container {
-            margin-top: 50px;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bs-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: 0.5s;
+            color: var(--bs-light);
+        }
+
+        header {
+            background-color: var(--bs-dark);
             padding: 20px;
-            background-color: #f2f2f2;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            white-space: pre-wrap;
-            font-family: monospace;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--bs-light);
+            margin-bottom: 5px;
+        }
+
+        .welcome {
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        .theme-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            background-color: var(--bs-dark);
+        }
+
+        #theme-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .theme-container:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: var(--bs-dark);
+            padding: 20px;
+            text-align: center;
+            color: var(--bs-light);
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- Header content as before -->
         <div class="hamburger">
             <span></span>
             <span></span>
@@ -31,7 +92,6 @@
         <h1>"I rebel; therefore I exist."</h1>
     </section>
 
-    <!-- Added theme container with the image at the top -->
     <div class="theme-container shadow-dark" onclick="toggleTheme()">
         <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
     </div>
@@ -41,9 +101,6 @@
     </footer>
 
     <script>
-        // Your JavaScript code as before
-
-        // Function to toggle the theme
         function toggleTheme() {
             var theme = localStorage.getItem("theme") || "dark";
             const themeContainer = document.querySelector(".theme-container");
@@ -52,42 +109,36 @@
             const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
 
             if (theme === "dark") {
+                document.documentElement.style.setProperty("--bs-dark", "#212121");
                 document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.documentElement.style.setProperty("--bs-dark", "#808080");
                 document.body.style.backgroundColor = "var(--bs-light)";
-                themeContainer.style.backgroundColor = "var(--bs-light)";
                 themeIcon.src = sun;
                 theme = "light";
             } else {
+                document.documentElement.style.setProperty("--bs-dark", "#212121");
                 document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.documentElement.style.setProperty("--bs-dark", "#212121"); /* Darken the color */
                 document.body.style.backgroundColor = "var(--bs-dark)";
-                themeContainer.style.backgroundColor = "var(--bs-dark)";
                 themeIcon.src = moon;
                 theme = "dark";
             }
             localStorage.setItem("theme", theme);
         }
 
-        // Apply the stored theme on page load or set default to dark mode
         document.addEventListener("DOMContentLoaded", function() {
             var theme = localStorage.getItem("theme") || "dark";
-            const themeContainer = document.querySelector(".theme-container");
             const themeIcon = document.getElementById("theme-icon");
             const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
             const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
 
             if (theme === "light") {
+                document.documentElement.style.setProperty("--bs-dark", "#212121");
                 document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.documentElement.style.setProperty("--bs-dark", "#808080");
                 document.body.style.backgroundColor = "var(--bs-light)";
-                themeContainer.style.backgroundColor = "var(--bs-light)";
                 themeIcon.src = sun;
             } else {
+                document.documentElement.style.setProperty("--bs-dark", "#212121");
                 document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-                document.documentElement.style.setProperty("--bs-dark", "#212121"); /* Darken the color */
                 document.body.style.backgroundColor = "var(--bs-dark)";
-                themeContainer.style.backgroundColor = "var(--bs-dark)";
                 themeIcon.src = moon;
             }
         });

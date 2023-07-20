@@ -7,34 +7,33 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            --background-color: #ffffff; /* Light mode background color (white) */
-            background-color: var(--background-color);
+            background-color: #f2f2f2; /* Light mode background color (ash grey) */
         }
-        
+
         header {
-            background-color: #4B0082; /* Menu background color */
-            color: #fff;
+            background-color: transparent; /* Banner background color (transparent) */
+            color: #333;
             padding: 20px;
             text-align: right;
             position: relative;
             transition: right 0.3s ease-in-out;
             right: -200px; /* Off-screen initially */
         }
-        
+
         .hamburger {
             display: inline-block;
             cursor: pointer;
             padding: 10px;
         }
-        
+
         .hamburger span {
             display: block;
             width: 25px;
             height: 3px;
-            background-color: #fff;
+            background-color: #333;
             margin-bottom: 5px;
         }
-        
+
         .welcome {
             text-align: center;
             margin-top: 150px;
@@ -47,16 +46,19 @@
 
         /* Dark mode styles */
         body.dark-mode {
-            --background-color: #808080; /* Dark mode background color (ash grey) */
+            background-color: #ffffff; /* Dark mode background color (white) */
         }
 
-        /* Dark mode toggle */
+        /* Show the dark mode toggle */
         .dark-mode-toggle {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
             cursor: pointer;
+            background-color: #4B0082; /* Menu background color (purple) */
             color: #fff;
+            padding: 10px 15px;
+            border-radius: 4px;
         }
     </style>
 </head>

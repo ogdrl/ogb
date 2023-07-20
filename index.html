@@ -81,6 +81,17 @@
             color: var(--bs-light);
             margin-top: auto;
         }
+
+        /* Update text and menu color in dark mode */
+        body.dark-mode {
+            color: var(--bs-light);
+        }
+
+        body.dark-mode header,
+        body.dark-mode .hamburger,
+        body.dark-mode .welcome {
+            color: var(--bs-light);
+        }
     </style>
 </head>
 <body>
@@ -126,6 +137,7 @@
                 themeIcon.src = moon;
                 theme = "dark";
             }
+            document.body.classList.toggle("dark-mode"); // Add or remove "dark-mode" class
             localStorage.setItem("theme", theme);
         }
 

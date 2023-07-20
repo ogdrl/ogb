@@ -35,13 +35,14 @@
     </footer>
 
     <script>
-        var theme = localStorage.getItem("theme") || "dark";
-        const themeContainer = document.querySelector(".theme-container");
-        const themeIcon = document.getElementById("theme-icon");
-        const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
-        const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
-
+        // Function to toggle the theme
         function toggleTheme() {
+            var theme = localStorage.getItem("theme") || "dark";
+            const themeContainer = document.querySelector(".theme-container");
+            const themeIcon = document.getElementById("theme-icon");
+            const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+            const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
+
             if (theme === "dark") {
                 document.documentElement.style.setProperty("--bs-light", "#fff");
                 document.documentElement.style.setProperty("--bs-dark", "#333333");
@@ -61,19 +62,27 @@
         }
 
         // Apply the stored theme on page load or set default to dark mode
-        if (theme === "light") {
-            document.documentElement.style.setProperty("--bs-light", "#fff");
-            document.documentElement.style.setProperty("--bs-dark", "#333333");
-            document.body.style.backgroundColor = "var(--bs-light)";
-            themeContainer.style.backgroundColor = "var(--bs-light)";
-            themeIcon.src = sun;
-        } else {
-            document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
-            document.documentElement.style.setProperty("--bs-dark", "#808080");
-            document.body.style.backgroundColor = "var(--bs-dark)";
-            themeContainer.style.backgroundColor = "var(--bs-dark)";
-            themeIcon.src = moon;
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var theme = localStorage.getItem("theme") || "dark";
+            const themeContainer = document.querySelector(".theme-container");
+            const themeIcon = document.getElementById("theme-icon");
+            const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+            const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
+
+            if (theme === "light") {
+                document.documentElement.style.setProperty("--bs-light", "#fff");
+                document.documentElement.style.setProperty("--bs-dark", "#333333");
+                document.body.style.backgroundColor = "var(--bs-light)";
+                themeContainer.style.backgroundColor = "var(--bs-light)";
+                themeIcon.src = sun;
+            } else {
+                document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+                document.documentElement.style.setProperty("--bs-dark", "#808080");
+                document.body.style.backgroundColor = "var(--bs-dark)";
+                themeContainer.style.backgroundColor = "var(--bs-dark)";
+                themeIcon.src = moon;
+            }
+        });
     </script>
 </body>
 </html>

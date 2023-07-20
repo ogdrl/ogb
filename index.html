@@ -1,30 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome Landing Page</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <title>Simple Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: right;
+        }
+        
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .welcome {
+            text-align: center;
+            margin-top: 150px;
+        }
+    </style>
 </head>
 <body>
-  <nav class="top-nav">
-    <div>
-      Logo Here
-    </div>
-    <input id="menu-toggle" type="checkbox" />
-    <label class="menu-button-container" for="menu-toggle">
-      <div class="menu-button"></div>
-    </label>
-    <ul class="menu">
-      <li>Home</li>
-      <li>About</li>
-      <li>Services</li>
-      <li>Contact</li>
-    </ul>
-  </nav>
-
-  <div class="welcome-container">
-    <h1>Welcome</h1>
-  </div>
+    <header>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <section class="welcome">
+        <h1>Welcome</h1>
+    </section>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('header');
+        
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

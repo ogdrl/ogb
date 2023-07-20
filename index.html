@@ -7,11 +7,12 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #330033; /* Darker background color */
+            --background-color: #ffffff; /* Light mode background color (white) */
+            background-color: var(--background-color);
         }
         
         header {
-            background-color: #4B0082; /* Deep Purple */
+            background-color: #4B0082; /* Menu background color */
             color: #fff;
             padding: 20px;
             text-align: right;
@@ -43,9 +44,27 @@
         .open {
             right: 0; /* Slide in when open */
         }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            --background-color: #808080; /* Dark mode background color (ash grey) */
+        }
+
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
+    <!-- Dark mode toggle -->
+    <div class="dark-mode-toggle" onclick="darkModeToggle()">
+        Dark Mode
+    </div>
     <header>
         <div class="hamburger">
             <span></span>
@@ -63,6 +82,12 @@
         hamburger.addEventListener('click', () => {
             menu.classList.toggle('open');
         });
+
+        // Dark and Light Mode Toggle
+        const body = document.querySelector('body');
+        const darkModeToggle = () => {
+            body.classList.toggle('dark-mode');
+        };
     </script>
 </body>
 </html>

@@ -73,6 +73,24 @@
       background-color: var(--bs-light);
       color: var(--bs-dark);
     }
+
+    .welcome {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .spotify-embed {
+      border-radius: 12px;
+      width: calc(100% - 40px);
+      max-width: 600px;
+      margin: 10px;
+    }
+
+    .content-container {
+      width: calc(100% - 40px);
+      max-width: 800px;
+      padding: 20px;
+    }
   </style>
 </head>
 
@@ -83,13 +101,13 @@
     </div>
   </header>
 
-  <div style="height: 70px;"></div> <!-- Placeholder for the transparent header -->
+  <div class="content-container">
+    <section class="welcome">
+      <h1>"I rebel; therefore I exist."</h1>
+    </section>
 
-  <section class="welcome">
-    <h1 style="text-align: center;">"I rebel; therefore I exist."</h1>
-  </section>
-
-  <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/3gdT2Xtw23uAijOCwg7IvK?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/3gdT2Xtw23uAijOCwg7IvK?utm_source=generator&theme=0" width="100%" height="300" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
 
   <footer class="footer">OGBlock 2023</footer>
 

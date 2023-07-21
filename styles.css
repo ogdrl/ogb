@@ -1,87 +1,16 @@
+:root {
+  --bs-dark: #212121;
+  --bs-light: #f2f2f2;
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #6b3e91; /* Dark purple color for the body background */
-}
-
-.welcome-container {
-  text-align: center;
-  background-color: #8a5ba3; /* Slightly lighter purple color for the welcome note background */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Top navigation styles */
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #8a5ba3; /* Match the welcome note background color */
-  padding: 10px 20px;
-}
-
-.top-nav div {
-  color: #ffffff; /* White text color for the logo */
-}
-
-/* Menu styles */
-.menu {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
   display: flex;
-  align-items: center;
-}
-
-.menu li {
-  margin-right: 15px;
-  color: #ffffff; /* White text color for the menu items */
-}
-
-.menu-button-container {
-  display: none;
-}
-
-/* Add responsive styles for menu toggle */
-@media screen and (max-width: 768px) {
-  .menu {
-    display: none;
-  }
-
-  .menu-button-container {
-    display: block;
-  }
-
-  .menu-button {
-    width: 30px;
-    height: 3px;
-    background-color: #ffffff; /* White color for the menu button */
-    position: relative;
-  }
-
-  .menu-button::before,
-  .menu-button::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: #ffffff; /* White color for the menu button */
-  }
-
-  .menu-button::before {
-    top: -10px;
-  }
-
-  .menu-button::after {
-    bottom: -10px;
-  }
-
-  #menu-toggle:checked ~ .menu {
-    display: flex;
-    flex-direction: column;
-  }
+  flex-direction: column;
+  min-height: 100vh;
+  transition: 0.5s;
 }

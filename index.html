@@ -23,18 +23,29 @@
       transition: 0.5s;
     }
 
+    header {
+      background-color: transparent;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: var(--bs-dark);
+    }
+
     .theme-container {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      position: fixed;
-      top: 20px;
-      right: 20px;
+      background-color: var(--bs-dark);
       display: flex;
       justify-content: center;
       align-items: center;
       transition: 0.5s;
-      background-color: var(--bs-dark);
+      margin-right: 20px;
     }
 
     #theme-icon {
@@ -64,13 +75,17 @@
 </head>
 
 <body>
-  <div class="theme-container shadow-dark" onclick="toggleTheme()">
-    <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
-  </div>
-
   <header>
-    <h1 style="text-align: center; margin-top: 50px;">"I rebel; therefore I exist."</h1>
+    <div class="theme-container shadow-dark" onclick="toggleTheme()">
+      <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+    </div>
   </header>
+
+  <div style="height: 70px;"></div> <!-- Placeholder for the transparent header -->
+
+  <section class="welcome">
+    <h1 style="text-align: center; margin-top: 50px;">"I rebel; therefore I exist."</h1>
+  </section>
 
   <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/3gdT2Xtw23uAijOCwg7IvK?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 

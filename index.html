@@ -4,7 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OGBlock</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --bs-dark: #212121;
+      --bs-light: #f2f2f2;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bs-dark);
+      color: var(--bs-light);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: 0.5s;
+    }
+
+    header {
+      background-color: transparent;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--bs-dark);
+    }
+
+    .hamburger {
+      display: inline-block;
+      cursor: pointer;
+      padding: 10px;
+      color: var(--bs-dark);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--bs-dark);
+      margin-bottom: 5px;
+    }
+
+    .welcome {
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    .theme-container {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+      background-color: var(--bs-dark);
+    }
+
+    #theme-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .theme-container:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      background-color: var(--bs-dark);
+      padding: 20px;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    body.dark-mode {
+      background-color: var(--bs-light);
+      color: var(--bs-dark);
+    }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: var(--bs-light);
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: var(--bs-dark);
+    }
+
+    .menu-item {
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .menu-item:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,7 +118,7 @@
       <span></span>
       <span></span>
     </div>
-    <nav id="menu" style="display: none;">
+    <nav id="menu">
       <a class="menu-item" href="#">Home</a>
       <a class="menu-item" href="#">About</a>
       <a class="menu-item" href="#">Contact</a>
@@ -24,9 +129,61 @@
   </section>
   <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/3gdT2Xtw23uAijOCwg7IvK?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   <div class="theme-container shadow-dark" onclick="toggleTheme()">
-    <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+    <img src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
   </div>
   <footer class="footer">OGBlock 2023</footer>
-  <script src="script.js"></script>
-</body>
-</html>
+  <script>
+    function toggleTheme() {
+      var theme = localStorage.getItem("theme") || "dark";
+      const themeContainer = document.querySelector(".theme-container");
+      const themeIcon = document.getElementById("theme-icon");
+      const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+      const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
+
+      if (theme === "dark") {
+        document.documentElement.style.setProperty("--bs-dark", "#212121");
+        document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+        document.body.style.backgroundColor = "var(--bs-light)";
+        themeContainer.style.backgroundColor = "var(--bs-light)";
+        themeIcon.src = sun;
+        theme = "light";
+      } else {
+        document.documentElement.style.setProperty("--bs-dark", "#212121");
+        document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+        document.body.style.backgroundColor = "var(--bs-dark)";
+        themeContainer.style.backgroundColor = "var(--bs-dark)";
+        themeIcon.src = moon;
+        theme = "dark";
+      }
+      document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("light-mode");
+      localStorage.setItem("theme", theme);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var theme = localStorage.getItem("theme") || "dark";
+      const themeContainer = document.querySelector(".theme-container");
+      const themeIcon = document.getElementById("theme-icon");
+      const sun = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+      const moon = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
+
+      if (theme === "light") {
+        document.documentElement.style.setProperty("--bs-dark", "#212121");
+        document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+        document.body.style.backgroundColor = "var(--bs-light)";
+        themeContainer.style.backgroundColor = "var(--bs-light)";
+        themeIcon.src = sun;
+      } else {
+        document.documentElement.style.setProperty("--bs-dark", "#212121");
+        document.documentElement.style.setProperty("--bs-light", "#f2f2f2");
+        document.body.style.backgroundColor = "var(--bs-dark)";
+        themeContainer.style.backgroundColor = "var(--bs-dark)";
+        themeIcon.src = moon;
+      }
+      document.body.classList.toggle("dark-mode", theme === "light");
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+   

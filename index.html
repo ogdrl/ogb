@@ -4,178 +4,201 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OGBlock</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <style>
-    :root {
-      --d: #212121;
-      --l: #f2f2f2;
-      --menu-icon-color-dark: white;
-      --menu-icon-color-light: black;
+    html, body {
+      overflow-x: hidden;
+      height: 100%;
     }
 
     body {
+      background: #fff;
+      padding: 0;
+      margin: 0;
+      font-family: 'Varela Round', sans-serif;
+    }
+
+    .header {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 100%;
+      box-shadow: none;
+      background-color: #FC466B;
+      position: fixed;
+      height: 60px!important;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .main {
+      margin: 0 auto;
+      display: block;
+      height: 100%;
+      margin-top: 60px;
+    }
+
+    .mainInner {
+      display: table;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .mainInner div {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 3em;
+      font-weight: bold;
+      letter-spacing: 1.25px;
+    }
+
+    #sidebarMenu {
+      height: 100%;
+      position: fixed;
+      left: 0;
+      width: 250px;
+      margin-top: 60px;
+      transform: translateX(-250px);
+      transition: transform 250ms ease-in-out;
+      background: linear-gradient(180deg, #FC466B 0%, #3F5EFB 100%);
+    }
+
+    .sidebarMenuInner {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--d);
-      color: var(--l);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      transition: 0.5s;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
     }
 
-    header {
-      background-color: transparent;
+    .sidebarMenuInner li {
+      list-style: none;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
       padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--d);
-    }
-
-    .hamburger {
-      display: inline-block;
       cursor: pointer;
-      padding: 10px;
-      color: var(--menu-icon-color-dark);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
     }
 
-    .hamburger span {
+    .sidebarMenuInner li span {
       display: block;
-      width: 25px;
-      height: 3px;
-      background-color: var(--menu-icon-color-dark);
-      margin-bottom: 5px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.50);
     }
 
-    .welcome {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .theme-container {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.5s;
-      background-color: var(--d);
-    }
-
-    #theme-icon {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
-    }
-
-    .theme-container:hover {
-      transform: scale(1.1);
-    }
-
-    footer {
-      background-color: var(--d);
-      padding: 20px;
-      text-align: center;
-      margin-top: auto;
-    }
-
-    body.dark-mode {
-      background-color: var(--l);
-      color: var(--d);
-    }
-
-    nav {
-      position: absolute;
-      top: 0;
-      left: -250px; /* Move the menu off-screen initially */
-      width: 250px;
-      height: 100%;
-      background-color: var(--d);
-      border-radius: 5px;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      color: var(--l);
-      transition: left 0.5s ease; /* Add ease for smoother animation */
-    }
-
-    .menu-item {
-      display: block;
-      padding: 5px 10px;
+    .sidebarMenuInner li a {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
       text-decoration: none;
-      color: inherit;
-      transition: 0.5s;
     }
 
-    .menu-item:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+    input[type="checkbox"]:checked ~ #sidebarMenu {
+      transform: translateX(0);
     }
 
-    .menu-open {
-      left: 0; /* Slide the menu in from the left when it's open */
+    input[type=checkbox] {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      display: none;
+    }
+
+    .sidebarIconToggle {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      cursor: pointer;
+      position: absolute;
+      z-index: 99;
+      height: 100%;
+      width: 100%;
+      top: 22px;
+      left: 15px;
+      height: 22px;
+      width: 22px;
+    }
+
+    .spinner {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    .horizontal {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      margin-top: 3px;
+    }
+
+    .diagonal.part-1 {
+      position: relative;
+      transition: all 0.3s;
+      box-sizing: border-box;
+      float: left;
+    }
+
+    .diagonal.part-2 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      margin-top: 3px;
+    }
+
+    input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      opacity: 0;
+    }
+
+    input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      transform: rotate(135deg);
+      margin-top: 8px;
+    }
+
+    input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      transform: rotate(-135deg);
+      margin-top: -9px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
-  <section class="welcome">
-    <h1>"I rebel; therefore I exist."</h1>
-  </section>
-  <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/3gdT2Xtw23uAijOCwg7IvK?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  <div class="theme-container shadow-dark" onclick="toggleTheme()">
-    <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+  <div class="header"></div>
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li>Jelena Jovanovic <span>Web Developer</span></li>
+      <li><a href="https://vanila.io" target="_blank">Company</a></li>
+      <li><a href="https://instagram.com/plavookac" target="_blank">Instagram</a></li>
+      <li><a href="https://twitter.com/plavookac" target="_blank">Twitter</a></li>
+      <li><a href="https://www.youtube.com/channel/UCDfZM0IK6RBgud8HYGFXAJg" target="_blank">YouTube</a></li>
+      <li><a href="https://www.linkedin.com/in/plavookac/" target="_blank">Linkedin</a></li>
+    </ul>
   </div>
-  <footer>OGBlock 2023</footer>
-  <script>
-    function toggleTheme() {
-      var e = localStorage.getItem("theme") || "dark";
-      const t = document.querySelector(".theme-container");
-      const n = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
-      const a = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
-      if ("dark" === e) {
-        document.documentElement.style.setProperty("--d", "#212121");
-        document.documentElement.style.setProperty("--l", "#f2f2f2");
-        document.body.style.backgroundColor = "var(--l)";
-        t.style.backgroundColor = "var(--l)";
-        document.querySelector(".hamburger").style.color = "var(--menu-icon-color-dark)";
-        t.firstChild.src = n;
-        e = "light";
-      } else {
-        document.documentElement.style.setProperty("--d", "#212121");
-        document.documentElement.style.setProperty("--l", "#f2f2f2");
-        document.body.style.backgroundColor = "var(--d)";
-        t.style.backgroundColor = "var(--d)";
-        document.querySelector(".hamburger").style.color = "var(--menu-icon-color-light)";
-        t.firstChild.src = a;
-        e = "dark";
-      }
-      document.body.classList.toggle("dark-mode");
-      document.body.classList.toggle("light-mode");
-      localStorage.setItem("theme", e);
-    }
-
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("menu-open");
-    }
-
-    // Close the menu when clicking outside of it
-    document.addEventListener("click", function(event) {
-      const menu = document.getElementById("menu");
-      if (menu.classList.contains("menu-open") && !menu.contains(event.target) && !document.querySelector(".hamburger").contains(event.target)) {
-        menu.classList.remove("menu-open");
-      }
-    });
-  </script>
+  <div id='center' class="main center">
+    <div class="mainInner">
+      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+    </div>
+    <div class="mainInner">
+      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+    </div>
+    <div class="mainInner">
+      <div>PURE CSS SIDEBAR TOGGLE MENU</div>
+    </div>
+  </div> 
 </body>
 </html>

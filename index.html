@@ -100,7 +100,7 @@
       padding: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       color: var(--l);
-      transition: left 0.5s;
+      transition: left 0.5s ease; /* Add ease for smoother animation */
     }
 
     .menu-item {
@@ -163,15 +163,16 @@
       document.body.classList.toggle("light-mode");
       localStorage.setItem("theme", e);
     }
+
     function toggleMenu() {
-      const e = document.getElementById("menu");
-      e.classList.toggle("menu-open");
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("menu-open");
     }
 
     // Close the menu when clicking outside of it
     document.addEventListener("click", function(event) {
       const menu = document.getElementById("menu");
-      if (menu.classList.contains("menu-open") && !menu.contains(event.target)) {
+      if (menu.classList.contains("menu-open") && !menu.contains(event.target) && !document.querySelector(".hamburger").contains(event.target)) {
         menu.classList.remove("menu-open");
       }
     });

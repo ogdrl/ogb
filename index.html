@@ -90,7 +90,6 @@
     }
 
     nav {
-      display: none;
       position: absolute;
       top: 0;
       left: -250px; /* Move the menu off-screen initially */
@@ -109,7 +108,7 @@
       padding: 5px 10px;
       text-decoration: none;
       color: inherit;
-      transition: 0.5s; /* Add transition for the left property */
+      transition: 0.5s;
     }
 
     .menu-item:hover {
@@ -123,7 +122,7 @@
 </head>
 <body>
   <header>
-    <div class="hamburger" onclick="toggleMenu(event)"> <!-- Pass the event as an argument -->
+    <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
@@ -164,8 +163,7 @@
       document.body.classList.toggle("light-mode");
       localStorage.setItem("theme", e);
     }
-    function toggleMenu(event) {
-      event.stopPropagation(); // Stop event propagation to avoid closing the menu immediately
+    function toggleMenu() {
       const e = document.getElementById("menu");
       e.classList.toggle("menu-open");
     }

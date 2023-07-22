@@ -92,13 +92,16 @@
     nav {
       display: none;
       position: absolute;
-      top: 100%;
-      right: 0;
+      top: 0;
+      left: -250px; /* Move the menu off-screen initially */
+      width: 250px;
+      height: 100%;
       background-color: var(--d);
       border-radius: 5px;
       padding: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       color: var(--l);
+      transition: left 0.5s;
     }
 
     .menu-item {
@@ -111,6 +114,10 @@
     .menu-item:hover {
       background-color: rgba(255, 255, 255, 0.1);
     }
+
+    .menu-open {
+      left: 0; /* Slide the menu in from the left when it's open */
+    }
   </style>
 </head>
 <body>
@@ -120,11 +127,6 @@
       <span></span>
       <span></span>
     </div>
-    <nav id="menu">
-      <a class="menu-item" href="#">Home</a>
-      <a class="menu-item" href="#">About</a>
-      <a class="menu-item" href="#">Contact</a>
-    </nav>
   </header>
   <section class="welcome">
     <h1>"I rebel; therefore I exist."</h1>
@@ -139,7 +141,7 @@
       var e = localStorage.getItem("theme") || "dark";
       const t = document.querySelector(".theme-container");
       const n = "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
-      const a = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon";
+      const a = "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg";
       if ("dark" === e) {
         document.documentElement.style.setProperty("--d", "#212121");
         document.documentElement.style.setProperty("--l", "#f2f2f2");
@@ -163,7 +165,7 @@
     }
     function toggleMenu() {
       const e = document.getElementById("menu");
-      e.style.display = e.style.display === "block" ? "none" : "block";
+      e.classList.toggle("menu-open");
     }
   </script>
 </body>

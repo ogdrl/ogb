@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OGBlock</title>
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     html, body {
       overflow-x: hidden;
@@ -12,10 +14,16 @@
     }
 
     body {
-      background: #36454F;
-      padding: 0;
+      font-family: "Montserrat", sans-serif;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      min-height: 100vh;
       margin: 0;
-      font-family: 'Varela Round', sans-serif;
+      transition: background 0.2s linear;
     }
 
     .header {
@@ -29,6 +37,8 @@
       height: 60px!important;
       overflow: hidden;
       z-index: 10;
+      top: 0;
+      left: 0;
     }
 
     .main {
@@ -187,5 +197,25 @@
       <li><a href="#">Contact</a></li>
     </ul>
   </div>
+  <div class="main">
+    <div class="mainInner">
+      <div>YOUR CONTENT HERE</div>
+    </div>
+  </div>
+  <h1>Light/Dark Toggle<br> Button</h1>
+  <div>
+    <input type="checkbox" class="checkbox" id="checkbox">
+    <label for="checkbox" class="checkbox-label">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <span class="ball"></span>
+    </label>
+  </div>
+  <script>
+    const checkbox = document.getElementById("checkbox");
+    checkbox.addEventListener("change", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
 </body>
 </html>

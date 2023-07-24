@@ -4,21 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OGBlock</title>
-  <link href="https://fonts.cdnfonts.com/css/bauhaus-modern" rel="stylesheet">
   <style>
     html, body {
       overflow-x: hidden;
       height: 100%;
-    }
-
-    body {
+      font-family: sans-serif;
       background: #36454F;
-      padding: 0;
       margin: 0;
-      font-family: 'Bauhaus Modern', sans-serif;
+      padding: 0;
     }
 
-    .hdr {
+    .header {
       display: block;
       margin: 0 auto;
       width: 100%;
@@ -38,23 +34,23 @@
       margin-top: 60px;
     }
 
-    .mInner {
+    .mainInner {
       display: table;
       height: 100%;
       width: 100%;
       text-align: center;
     }
 
-    .mInner div {
+    .mainInner div {
       display: table-cell;
       vertical-align: middle;
-      color: #FFFFFF;
       font-size: 3em;
       font-weight: bold;
       letter-spacing: 1.25px;
+      color: #FFFFFF;
     }
 
-    #sbMenu {
+    #sidebarMenu {
       height: 100%;
       position: fixed;
       left: 0;
@@ -65,13 +61,13 @@
       background: linear-gradient(180deg, #36454F 0%, #36454F 100%);
     }
 
-    .sbMenuInner {
+    .sidebarMenuInner {
       margin: 0;
       padding: 0;
       border-top: 1px solid rgba(255, 255, 255, 0.10);
     }
 
-    .sbMenuInner li {
+    .sidebarMenuInner li {
       list-style: none;
       color: #FFFFFF;
       text-transform: uppercase;
@@ -81,7 +77,13 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.10);
     }
 
-    .sbMenuInner li a {
+    .sidebarMenuInner li span {
+      display: block;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.50);
+    }
+
+    .sidebarMenuInner li a {
       color: #FFFFFF;
       text-transform: uppercase;
       font-weight: bold;
@@ -89,7 +91,7 @@
       text-decoration: none;
     }
 
-    input[type="checkbox"]:checked ~ #sbMenu {
+    input[type="checkbox"]:checked ~ #sidebarMenu {
       transform: translateX(0);
     }
 
@@ -99,7 +101,7 @@
       display: none;
     }
 
-    .sbIconToggle {
+    .sidebarIconToggle {
       transition: all 0.3s;
       box-sizing: border-box;
       cursor: pointer;
@@ -130,14 +132,14 @@
       margin-top: 3px;
     }
 
-    .diagonal.p1 {
+    .diagonal.part-1 {
       position: relative;
       transition: all 0.3s;
       box-sizing: border-box;
       float: left;
     }
 
-    .diagonal.p2 {
+    .diagonal.part-2 {
       transition: all 0.3s;
       box-sizing: border-box;
       position: relative;
@@ -145,20 +147,20 @@
       margin-top: 3px;
     }
 
-    input[type=checkbox]:checked ~ .sbIconToggle > .horizontal {
+    input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
       transition: all 0.3s;
       box-sizing: border-box;
       opacity: 0;
     }
 
-    input[type=checkbox]:checked ~ .sbIconToggle > .diagonal.p1 {
+    input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
       transition: all 0.3s;
       box-sizing: border-box;
       transform: rotate(135deg);
       margin-top: 8px;
     }
 
-    input[type=checkbox]:checked ~ .sbIconToggle > .diagonal.p2 {
+    input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
       transition: all 0.3s;
       box-sizing: border-box;
       transform: rotate(-135deg);
@@ -169,25 +171,25 @@
 <body>
   <!-- Welcome Note -->
   <div class="main">
-    <div class="mInner">
+    <div class="mainInner">
       <div>"I rebel; therefore I exist."</div>
     </div>
   </div>
-  
+
   <!-- Header -->
-  <div class="hdr"></div>
-  
+  <div class="header"></div>
+
   <!-- Sidebar Icon Toggle -->
-  <input type="checkbox" class="oSidebarMenu" id="oSidebarMenu">
-  <label for="oSidebarMenu" class="sbIconToggle">
-    <div class="spinner diagonal p1"></div>
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
     <div class="spinner horizontal"></div>
-    <div class="spinner diagonal p2"></div>
+    <div class="spinner diagonal part-2"></div>
   </label>
-  
+
   <!-- Sidebar Menu -->
-  <div id="sbMenu">
-    <ul class="sbMenuInner">
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>

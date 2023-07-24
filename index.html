@@ -10,33 +10,27 @@
     html, body {
       overflow-x: hidden;
       height: 100%;
+      padding: 0;
+      margin: 0;
     }
 
     body {
       background: #36454F;
-      padding: 0;
-      margin: 0;
       font-family: 'Bauhaus Modern', sans-serif;
       font-size: 16px;
     }
 
     .hdr {
-      display: block;
-      margin: 0 auto;
-      width: 100%;
-      max-width: 100%;
-      box-shadow: none;
-      background-color: #36454F;
       position: fixed;
-      height: 60px!important;
-      overflow: hidden;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #36454F;
       z-index: 10;
     }
 
     .main {
-      margin: 0 auto;
-      display: block;
-      height: 100%;
       margin-top: 60px;
     }
 
@@ -56,11 +50,11 @@
     }
 
     #sbMenu {
-      height: 100%;
       position: fixed;
+      top: 60px;
       left: 0;
       width: 250px;
-      margin-top: 60px;
+      height: 100%;
       transform: translateX(-250px);
       transition: transform 250ms ease-in-out;
       background: linear-gradient(180deg, #36454F 0%, #36454F 100%);
@@ -106,8 +100,6 @@
       cursor: pointer;
       position: absolute;
       z-index: 99;
-      height: 100%;
-      width: 100%;
       top: 22px;
       left: 15px;
       height: 22px;
@@ -123,45 +115,23 @@
       background-color: #FFFFFF;
     }
 
-    .horizontal {
+    .horizontal, .diagonal.p1, .diagonal.p2 {
       transition: all 0.3s;
       box-sizing: border-box;
       position: relative;
       float: left;
-      margin-top: 3px;
-    }
-
-    .diagonal.p1 {
-      position: relative;
-      transition: all 0.3s;
-      box-sizing: border-box;
-      float: left;
-    }
-
-    .diagonal.p2 {
-      transition: all 0.3s;
-      box-sizing: border-box;
-      position: relative;
-      float: left;
-      margin-top: 3px;
     }
 
     input[type=checkbox]:checked ~ .sbIconToggle > .horizontal {
-      transition: all 0.3s;
-      box-sizing: border-box;
       opacity: 0;
     }
 
     input[type=checkbox]:checked ~ .sbIconToggle > .diagonal.p1 {
-      transition: all 0.3s;
-      box-sizing: border-box;
       transform: rotate(135deg);
       margin-top: 8px;
     }
 
     input[type=checkbox]:checked ~ .sbIconToggle > .diagonal.p2 {
-      transition: all 0.3s;
-      box-sizing: border-box;
       transform: rotate(-135deg);
       margin-top: -9px;
     }
@@ -182,7 +152,7 @@
     .playlists-heading {
       text-align: center;
       margin-top: 30px;
-      font-size: 24px;
+      font-size: 16px; /* Default font size */
       font-weight: bold;
       color: #FFFFFF;
     }
@@ -203,6 +173,9 @@
     <!-- Your banner content goes here -->
   </div>
 
+  <!-- Playlists header -->
+  <div class="playlists-heading">Playlists</div>
+
   <!-- Welcome note -->
   <div class="welcome-note">“I rebel; therefore I exist.”</div>
 
@@ -222,7 +195,6 @@
 
   <div class="main">
     <div class="mInner">
-      <div class="playlists-heading">Playlists</div>
 
       <!-- Embedded Spotify playlist -->
       <div class="spotify-playlist">

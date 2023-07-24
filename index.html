@@ -17,7 +17,7 @@
       padding: 0;
       margin: 0;
       font-family: 'Bauhaus Modern', sans-serif;
-      font-size: 16px; /* Set the font size to default (16px) */
+      font-size: 16px;
     }
 
     .hdr {
@@ -49,7 +49,7 @@
 
     .mInner div {
       display: table-cell;
-      vertical-align: top; /* Align the text to the top */
+      vertical-align: top;
       font-weight: bold;
       letter-spacing: 1.25px;
       color: #FFFFFF;
@@ -80,12 +80,6 @@
       padding: 20px;
       cursor: pointer;
       border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-    .sbMenuInner li span {
-      display: block;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.50);
     }
 
     .sbMenuInner li a {
@@ -172,15 +166,24 @@
       margin-top: -9px;
     }
 
-    /* Additional style for the Welcome note */
-    .banner {
-      /* Your banner styles go here */
-    }
-
     .welcome-note {
       text-align: center;
       margin-top: 20px;
       color: #FFFFFF;
+    }
+
+    .playlists-heading {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    .spotify-playlist {
+      text-align: center;
+      margin-top: 10px;
+      border-radius: 12px;
     }
   </style>
 </head>
@@ -191,6 +194,13 @@
     <!-- Your banner content goes here -->
   </div>
   <div class="welcome-note">“I rebel; therefore I exist.”</div>
+
+  <div class="playlists-heading">Playlists</div>
+
+  <div class="spotify-playlist">
+    <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/3gdT2Xtw23uAijOCwg7IvK?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
   <input type="checkbox" class="oSidebarMenu" id="oSidebarMenu">
   <label for="oSidebarMenu" class="sbIconToggle">
     <div class="spinner diagonal p1"></div>

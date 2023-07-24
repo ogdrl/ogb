@@ -49,6 +49,9 @@
       display: table-cell;
       vertical-align: middle;
       color: #FFFFFF;
+      font-size: 3em;
+      font-weight: bold;
+      letter-spacing: 1.25px;
     }
 
     #sbMenu {
@@ -76,12 +79,6 @@
       padding: 20px;
       cursor: pointer;
       border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-    }
-
-    .sbMenuInner li span {
-      display: block;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.50);
     }
 
     .sbMenuInner li a {
@@ -170,24 +167,31 @@
   </style>
 </head>
 <body>
+  <!-- Welcome Note -->
+  <div class="main">
+    <div class="mInner">
+      <div>"I rebel; therefore I exist."</div>
+    </div>
+  </div>
+  
+  <!-- Header -->
   <div class="hdr"></div>
+  
+  <!-- Sidebar Icon Toggle -->
   <input type="checkbox" class="oSidebarMenu" id="oSidebarMenu">
   <label for="oSidebarMenu" class="sbIconToggle">
     <div class="spinner diagonal p1"></div>
     <div class="spinner horizontal"></div>
     <div class="spinner diagonal p2"></div>
   </label>
+  
+  <!-- Sidebar Menu -->
   <div id="sbMenu">
     <ul class="sbMenuInner">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-  </div>
-  <div class="main">
-    <div class="mInner">
-      <div>"I rebel; therefore I exist."</div>
-    </div>
   </div>
 </body>
 </html>
